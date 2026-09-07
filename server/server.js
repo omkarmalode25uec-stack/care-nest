@@ -20,16 +20,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB (only auto-seed in development when using ephemeral in-memory database)
-connectDB()
-  .then(async () => {
-    if (process.env.NODE_ENV !== 'production' && !process.env.MONGODB_URI) {
-      await seedDatabase();
-    }
-  })
-  .catch((err) => {
-    console.error('[Server DB Error]', err.message);
-  });
+// Connect to MongoDB in standalone mode (only auto-seed in development when using ephemeral in-memory database)
+if (!process.env.VERCEL) {
+  connectDB()
+    .then(async () => {
+      if (process.env.NODE_ENV !== 'production' && !process.env.MONGODB_URI) {
+        await seedDatabase();
+      }
+    })
+    .catch((err) => {
+      console.error('[Server DB Error]', err.message);
+    });
+}
 
 // Allowed Origins for CORS
 const allowedOrigins = [

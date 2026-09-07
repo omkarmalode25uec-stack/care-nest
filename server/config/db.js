@@ -12,27 +12,37 @@ const connectDB = async () => {
     return mongoose.connection;
   }
 
-  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/kumbhstay';
+  const isProduction = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
+  const uri = process.env.MONGODB_URI;
+
+  if (isProduction && !uri) {
+    throw new Error('MONGODB_URI environment variable is missing in production configuration.');
+  }
+
+  const connectionUri = uri || 'mongodb://127.0.0.1:27017/kumbhstay';
 
   try {
-    const conn = await mongoose.connect(uri, {
+    const conn = await mongoose.connect(connectionUri, {
       serverSelectionTimeoutMS: 5000,
+      bufferCommands: false,
     });
-    console.log(`[MongoDB] Connected successfully: ${conn.connection.host}/${conn.connection.name}`);
+    console.log(`[MongoDB] Connected successfully to ${conn.connection.name}`);
     return conn;
   } catch (error) {
-    console.warn(`[MongoDB Notice] Native MongoDB at '${uri}' is unavailable (${error.message}).`);
+    console.warn(`[MongoDB Notice] Connection attempt failed (${error.message}).`);
     
-    // In development mode, spin up MongoMemoryServer for instant plug-and-play functionality
-    if (process.env.NODE_ENV !== 'production') {
+    // In development mode only, spin up MongoMemoryServer for instant plug-and-play functionality
+    if (!isProduction) {
       try {
         console.log('[MongoDB] Initializing MongoMemoryServer development database...');
         const { MongoMemoryServer } = await import('mongodb-memory-server');
-        memoryServer = await MongoMemoryServer.create({
-          instance: {
-            dbName: 'kumbhstay',
-          },
-        });
+        if (!memoryServer) {
+          memoryServer = await MongoMemoryServer.create({
+            instance: {
+              dbName: 'kumbhstay',
+            },
+          });
+        }
         const memUri = memoryServer.getUri();
         const conn = await mongoose.connect(memUri);
         console.log(`[MongoDB Memory Server] Connected to in-memory instance: ${memUri} (Database: kumbhstay)`);
