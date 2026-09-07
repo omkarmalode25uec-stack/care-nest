@@ -1,8 +1,12 @@
 import fs from 'fs';
 import git from '../server/node_modules/isomorphic-git/index.js';
 import http from '../server/node_modules/isomorphic-git/http/node/index.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const ROOT_DIR = 'c:/Users/HP/Desktop/KHUMBCARE STAY AND HEALTH';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 async function setupRemoteAndPush(remoteUrl, token) {
   if (!remoteUrl) {

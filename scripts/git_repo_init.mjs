@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import git from '../server/node_modules/isomorphic-git/index.js';
 
-const ROOT_DIR = 'c:/Users/HP/Desktop/KHUMBCARE STAY AND HEALTH';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 async function initCleanGitRepo() {
   console.log('=== CLEAN GIT REPOSITORY INITIALIZATION ===\n');
