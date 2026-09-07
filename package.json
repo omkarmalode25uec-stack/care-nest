@@ -1,0 +1,25 @@
+{
+  "name": "kumbhstay-workspace",
+  "version": "1.0.0",
+  "description": "KumbhStay - Trustworthy Accommodation and Pilgrim Assistance for Kumbh Mela",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm run build",
+    "build:client": "cd client && npm run build",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "start": "cd server && npm start",
+    "install:all": "cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "kumbhstay",
+    "mern",
+    "kumbh-mela",
+    "react",
+    "express",
+    "mongodb",
+    "node"
+  ],
+  "author": "KumbhStay Engineering",
+  "license": "ISC"
+}

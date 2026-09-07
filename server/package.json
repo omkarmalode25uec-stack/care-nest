@@ -1,0 +1,23 @@
+{
+  "name": "kumbhstay-server",
+  "version": "1.0.0",
+  "description": "KumbhStay Backend API - Accommodation & Pilgrim Assistance for Nashik Kumbh Mela",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed:nashik": "node seed/seedNashik.js",
+    "seed:nashik-reference": "node seed/seedNashikReference.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^10.1.4",
+    "mongoose": "^8.13.0",
+    "razorpay": "^2.9.8"
+  }
+}

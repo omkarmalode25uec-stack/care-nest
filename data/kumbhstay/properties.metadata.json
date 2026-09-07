@@ -1,0 +1,39 @@
+{
+  "indexes": [
+    {
+      "v": 2,
+      "key": {
+        "_id": 1
+      },
+      "name": "_id_"
+    },
+    {
+      "v": 2,
+      "key": {
+        "location": "2dsphere"
+      },
+      "name": "location_2dsphere"
+    },
+    {
+      "v": 2,
+      "key": {
+        "city": 1,
+        "propertyType": 1,
+        "pricePerNight": 1
+      },
+      "name": "city_type_price_idx"
+    },
+    {
+      "v": 2,
+      "key": {
+        "name": "text",
+        "address": "text",
+        "description": "text"
+      },
+      "name": "text_search_idx"
+    }
+  ],
+  "uuid": null,
+  "collectionName": "properties",
+  "type": "collection"
+}

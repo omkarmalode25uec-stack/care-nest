@@ -1,0 +1,22 @@
+{
+  "indexes": [
+    {
+      "v": 2,
+      "key": {
+        "_id": 1
+      },
+      "name": "_id_"
+    },
+    {
+      "v": 2,
+      "key": {
+        "propertyId": 1,
+        "createdAt": -1
+      },
+      "name": "property_review_idx"
+    }
+  ],
+  "uuid": null,
+  "collectionName": "reviews",
+  "type": "collection"
+}

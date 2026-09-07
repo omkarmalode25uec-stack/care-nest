@@ -1,0 +1,19 @@
+field,type,role,validation,source_status
+volunteer_id,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+skills,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+languages,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+verified_credentials,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+availability_window,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+zone_id,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+timestamp,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+presence_status,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+fatigue_check,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+heat_exposure,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+meal_status,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+incident_id,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+task_type,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+priority,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+dispatch_time,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+accept_time,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+arrival_time,project-specific,core parameter,domain validation required,replace/augment with permitted real data
+supervisor_id,project-specific,core parameter,domain validation required,replace/augment with permitted real data
