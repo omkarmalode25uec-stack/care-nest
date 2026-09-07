@@ -91,7 +91,7 @@ export const FindStays = () => {
       }
     } catch (err) {
       console.error('[FindStays] Error fetching properties:', err.message);
-      setError('Could not load stays. Please ensure backend server is active.');
+      setError(err.message || 'Unable to load stays. Please try again later.');
     } finally {
       setLoading(false);
     }

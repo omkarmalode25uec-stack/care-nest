@@ -312,7 +312,7 @@ export const getPropertyById = async (req, res, next) => {
     const property = await Property.findOne({
       _id: req.params.id,
       locationScope: 'nashik',
-    });
+    }).populate('owner', 'name phone isVerified');
 
     if (!property) {
       return res.status(404).json({
