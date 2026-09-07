@@ -494,85 +494,101 @@ export const seedDatabase = async () => {
       });
     }
 
-    // 2. Clear and Seed Properties (Nashik-Only Platform Scope)
-    await Property.deleteMany({});
-    const propertiesToInsert = sampleProperties.map((prop) => ({
-      ...prop,
-      owner: ownerUser._id,
-    }));
-    await Property.insertMany(propertiesToInsert);
-    console.log(`[Seeder] Successfully seeded ${propertiesToInsert.length} authentic Nashik properties (locationScope: 'nashik')!`);
+    // 2. Upsert authentic Nashik properties (Idempotent, Safe for Production)
+    let seededPropsCount = 0;
+    for (const prop of sampleProperties) {
+      await Property.findOneAndUpdate(
+        { title: prop.title, city: prop.city, locationScope: 'nashik' },
+        { ...prop, owner: ownerUser._id },
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
+      seededPropsCount++;
+    }
+    console.log(`[Seeder] Successfully ensured ${seededPropsCount} authentic Nashik properties (locationScope: 'nashik')!`);
 
     // 3. Ensure a Pending Verification property exists in Nashik for Admin inspection demo
-    const pendingStay = await Property.create({
-      owner: ownerUser._id,
-      title: 'Ramkund Yatri Dharamshala (Pending Audit)',
-      description: 'Spacious pilgrim accommodation near Ramkund Ghat in Panchavati, Nashik. Clean family rooms with solar hot water geysers and pure vegetarian satvik bhojan kitchen.',
-      propertyType: 'ashram',
-      address: 'Plot 18, Ramkund Ghat Marg, Panchavati',
-      city: 'Nashik',
-      state: 'Maharashtra',
-      country: 'India',
-      locationScope: 'nashik',
-      dataStatus: 'demo',
-      googleMapsUrl: 'https://maps.google.com/?q=20.0070,73.7920',
-      latitude: 20.0070,
-      longitude: 73.7920,
-      location: {
-        type: 'Point',
-        coordinates: [73.7920, 20.0070],
-      },
-      distanceFromKumbh: '400 m from Ramkund Ghat',
-      distancePoints: [
-        { pointName: 'Ramkund Snan Ghat', distance: '400 meters', type: 'ghat' },
-        { pointName: 'Kalaram Temple', distance: '250 meters', type: 'temple' },
-      ],
-      pricePerNight: 750,
-      priceRange: 'budget',
-      images: [
-        'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80',
-      ],
-      amenities: ['wifi', 'water', 'hotWater24h', 'attachedBathroom', 'pureVegFood'],
-      occupantPreferences: ['family', 'female', 'seniorCitizen'],
-      documents: [
-        {
-          docType: 'ownership_proof',
-          title: 'Municipal Registry Deed',
-          fileName: 'nashik_deed_plot18.pdf',
-          fileUrl: 'https://kumbhstay.org/docs/demo_deed.pdf',
-          status: 'pending',
+    const pendingTitle = 'Ramkund Yatri Dharamshala (Pending Audit)';
+    const existingPending = await Property.findOne({ title: pendingTitle, locationScope: 'nashik' });
+    if (!existingPending) {
+      const pendingStay = await Property.create({
+        owner: ownerUser._id,
+        title: pendingTitle,
+        description: 'Spacious pilgrim accommodation near Ramkund Ghat in Panchavati, Nashik. Clean family rooms with solar hot water geysers and pure vegetarian satvik bhojan kitchen.',
+        propertyType: 'ashram',
+        address: 'Plot 18, Ramkund Ghat Marg, Panchavati',
+        city: 'Nashik',
+        state: 'Maharashtra',
+        country: 'India',
+        locationScope: 'nashik',
+        dataStatus: 'demo',
+        googleMapsUrl: 'https://maps.google.com/?q=20.0070,73.7920',
+        latitude: 20.0070,
+        longitude: 73.7920,
+        location: {
+          type: 'Point',
+          coordinates: [73.7920, 20.0070],
         },
-      ],
-      verificationStatus: 'pending',
-      ownerVerified: false,
-      propertyVerified: false,
-      locationVerified: false,
-      photoVerified: false,
-      trustScore: 0,
-      contactPhone: '+91 98220 99881',
-      isActive: false,
-    });
-    console.log('[Seeder] Created pending audit property in Nashik:', pendingStay.title);
-
-    // 4. Ensure sample report exists for admin review queue
-    await Report.deleteMany({});
-    const sampleStay = await Property.findOne({ verificationStatus: 'verified', locationScope: 'nashik' });
-    if (sampleStay) {
-      await Report.create({
-        property: sampleStay._id,
-        reporterName: 'Aarav Deshmukh',
-        reporterContact: '+91 98111 22334',
-        reason: 'Incorrect amenities',
-        details: 'Wi-Fi connection was intermittently down during morning peak hours.',
-        status: 'pending',
+        distanceFromKumbh: '400 m from Ramkund Ghat',
+        distancePoints: [
+          { pointName: 'Ramkund Snan Ghat', distance: '400 meters', type: 'ghat' },
+          { pointName: 'Kalaram Temple', distance: '250 meters', type: 'temple' },
+        ],
+        pricePerNight: 750,
+        priceRange: 'budget',
+        images: [
+          'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80',
+        ],
+        amenities: ['wifi', 'water', 'hotWater24h', 'attachedBathroom', 'pureVegFood'],
+        occupantPreferences: ['family', 'female', 'seniorCitizen'],
+        documents: [
+          {
+            docType: 'ownership_proof',
+            title: 'Municipal Registry Deed',
+            fileName: 'nashik_deed_plot18.pdf',
+            fileUrl: 'https://kumbhstay.org/docs/demo_deed.pdf',
+            status: 'pending',
+          },
+        ],
+        verificationStatus: 'pending',
+        ownerVerified: false,
+        propertyVerified: false,
+        locationVerified: false,
+        photoVerified: false,
+        trustScore: 0,
+        contactPhone: '+91 98220 99881',
+        isActive: false,
       });
-      console.log('[Seeder] Created sample listing report for admin inspection.');
+      console.log('[Seeder] Created pending audit property in Nashik:', pendingStay.title);
     }
 
-    // 5. Seed Medical & Health Assistance Facilities (Nashik Scope)
-    await MedicalPoint.deleteMany({});
-    await MedicalPoint.insertMany(sampleMedicalPoints);
-    console.log(`[Seeder] Successfully seeded ${sampleMedicalPoints.length} verified Nashik medical & health points!`);
+    // 4. Ensure sample report exists for admin review queue
+    const existingReport = await Report.findOne({ reporterName: 'Aarav Deshmukh' });
+    if (!existingReport) {
+      const sampleStay = await Property.findOne({ verificationStatus: 'verified', locationScope: 'nashik' });
+      if (sampleStay) {
+        await Report.create({
+          property: sampleStay._id,
+          reporterName: 'Aarav Deshmukh',
+          reporterContact: '+91 98111 22334',
+          reason: 'Incorrect amenities',
+          details: 'Wi-Fi connection was intermittently down during morning peak hours.',
+          status: 'pending',
+        });
+        console.log('[Seeder] Created sample listing report for admin inspection.');
+      }
+    }
+
+    // 5. Upsert Medical & Health Assistance Facilities (Nashik Scope)
+    let seededMedicalCount = 0;
+    for (const med of sampleMedicalPoints) {
+      await MedicalPoint.findOneAndUpdate(
+        { name: med.name, city: med.city, locationScope: 'nashik' },
+        med,
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
+      seededMedicalCount++;
+    }
+    console.log(`[Seeder] Successfully ensured ${seededMedicalCount} verified Nashik medical & health points!`);
   } catch (error) {
     console.error('[Seeder Error]', error.message);
   }

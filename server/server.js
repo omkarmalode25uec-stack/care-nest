@@ -20,24 +20,56 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB & Seed Sample Data
+// Connect to MongoDB (only auto-seed in development when using ephemeral in-memory database)
 connectDB()
   .then(async () => {
-    await seedDatabase();
+    if (process.env.NODE_ENV !== 'production' && !process.env.MONGODB_URI) {
+      await seedDatabase();
+    }
   })
   .catch((err) => {
     console.error('[Server DB Error]', err.message);
   });
 
-// Middleware
+// Allowed Origins for CORS
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:5173',
+  'http://localhost:5000',
+  'http://localhost:3000',
+  'http://127.0.0.1:5173',
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, server-to-server, same-origin)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
     credentials: true,
   })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Database connection guarantee middleware for API routes
+app.use('/api', async (req, res, next) => {
+  if (req.path === '/health') return next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('[Database Middleware Error]', err.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Database connection unavailable',
+    });
+  }
+});
 
 // Health Check Route
 app.get('/api/health', (req, res) => {
@@ -66,13 +98,15 @@ app.use('/api/payments', paymentRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-// Start Server
-const server = app.listen(PORT, () => {
-  console.log(`[KumbhStay Server] Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-  console.log(`[Health Endpoint] http://localhost:${PORT}/api/health`);
-  console.log(`[Properties Endpoint] http://localhost:${PORT}/api/properties`);
-  console.log(`[Owner Endpoint] http://localhost:${PORT}/api/owner/properties`);
-});
+// Start Server (only when running directly, not inside Vercel serverless functions)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[KumbhStay Server] Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+    console.log(`[Health Endpoint] http://localhost:${PORT}/api/health`);
+    console.log(`[Properties Endpoint] http://localhost:${PORT}/api/properties`);
+    console.log(`[Owner Endpoint] http://localhost:${PORT}/api/owner/properties`);
+  });
+}
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {

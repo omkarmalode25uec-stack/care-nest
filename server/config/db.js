@@ -3,13 +3,22 @@ import mongoose from 'mongoose';
 let memoryServer = null;
 
 const connectDB = async () => {
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
+  }
+  if (mongoose.connection.readyState === 2) {
+    // Already connecting, wait until connected
+    await new Promise((resolve) => mongoose.connection.once('connected', resolve));
+    return mongoose.connection;
+  }
+
   const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/kumbhstay';
 
   try {
     const conn = await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 2000,
+      serverSelectionTimeoutMS: 5000,
     });
-    console.log(`[MongoDB] Connected successfully to native MongoDB: ${conn.connection.host}/${conn.connection.name}`);
+    console.log(`[MongoDB] Connected successfully: ${conn.connection.host}/${conn.connection.name}`);
     return conn;
   } catch (error) {
     console.warn(`[MongoDB Notice] Native MongoDB at '${uri}' is unavailable (${error.message}).`);

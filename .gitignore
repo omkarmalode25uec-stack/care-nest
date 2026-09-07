@@ -38,3 +38,6 @@ documents/
 private/
 storage/
 public/uploads/
+
+.vercel
+.env*
