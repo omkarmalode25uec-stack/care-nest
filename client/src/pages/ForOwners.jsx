@@ -21,8 +21,8 @@ export const ForOwners = () => {
       icon: Users,
     },
     {
-      title: 'KumbhStay Trust Badge',
-      description: 'Receive the official KumbhStay Trust Badge after free physical inspection, boosting your booking conversions.',
+      title: 'Care Nest Trust Badge',
+      description: 'Receive the official Care Nest Trust Badge after free physical inspection, boosting your booking conversions.',
       icon: Award,
     },
     {
@@ -70,7 +70,7 @@ export const ForOwners = () => {
             Host & Ashram Partner Program
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            List Your Stay on KumbhStay
+            List Your Stay on Care Nest
           </h1>
           <p className="text-white/90 text-sm sm:text-base leading-relaxed">
             Welcome yatris to honest, verified lodging. Join hands with the official trust initiative for Kumbh Mela accommodations.
@@ -97,7 +97,7 @@ export const ForOwners = () => {
       <div>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Why Host With KumbhStay?
+            Why Host With Care Nest?
           </h2>
           <p className="mt-2 text-sm text-slate-600">
             We empower local homeowners, hotels, and religious institutions to serve pilgrims with integrity.

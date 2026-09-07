@@ -77,7 +77,7 @@ app.use('/api', async (req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'KumbhStay API is running',
+    message: 'Care Nest API is running',
     environment: process.env.NODE_ENV || 'development',
     timestamp: new Date().toISOString(),
   });
@@ -103,7 +103,7 @@ app.use(errorHandler);
 // Start Server (only when running directly, not inside Vercel serverless functions)
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
-    console.log(`[KumbhStay Server] Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+    console.log(`[Care Nest Server] Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
     console.log(`[Health Endpoint] http://localhost:${PORT}/api/health`);
     console.log(`[Properties Endpoint] http://localhost:${PORT}/api/properties`);
     console.log(`[Owner Endpoint] http://localhost:${PORT}/api/owner/properties`);

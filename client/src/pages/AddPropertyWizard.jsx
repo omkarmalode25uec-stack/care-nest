@@ -585,7 +585,7 @@ export const AddPropertyWizard = () => {
             <div>
               <h2 className="text-xl font-bold text-slate-900">Step 3: Transparent Pricing</h2>
               <p className="text-xs text-slate-500 mt-0.5">
-                KumbhStay enforces transparent pricing. Zero surprise surge fees are permitted on peak Snan dates.
+                Care Nest enforces transparent pricing. Zero surprise surge fees are permitted on peak Snan dates.
               </p>
             </div>
 
@@ -593,7 +593,7 @@ export const AddPropertyWizard = () => {
               <ShieldCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold block">Total price should be transparent.</span>
-                <span>The tariff entered here will be binding for pilgrims booking through KumbhStay.</span>
+                <span>The tariff entered here will be binding for pilgrims booking through Care Nest.</span>
               </div>
             </div>
 

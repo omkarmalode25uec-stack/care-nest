@@ -1,6 +1,6 @@
-# Push KumbhStay to GitHub
+# Push Care Nest to GitHub
 Write-Host "===================================================" -ForegroundColor Cyan
-Write-Host "  Pushing KumbhStay to GitHub: care-nest" -ForegroundColor Yellow
+Write-Host "  Pushing Care Nest to GitHub: care-nest" -ForegroundColor Yellow
 Write-Host "  Repository: https://github.com/omkarmalode25uec-stack/care-nest" -ForegroundColor Cyan
 Write-Host "===================================================" -ForegroundColor Cyan
 Write-Host ""

@@ -1,6 +1,6 @@
-# KumbhStay — Data Dictionary (MongoDB Database: `kumbhstay`)
+# Care Nest — Data Dictionary (MongoDB Database: `kumbhstay`)
 
-This document defines the schema, field specifications, data types, constraints, GeoJSON geospatial specifications, normalization rules, and geographic provenance for the **KumbhStay** accommodation and pilgrim assistance platform.
+This document defines the schema, field specifications, data types, constraints, GeoJSON geospatial specifications, normalization rules, and geographic provenance for the **Care Nest** accommodation and pilgrim assistance platform.
 
 ---
 

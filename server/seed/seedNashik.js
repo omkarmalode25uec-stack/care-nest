@@ -6,7 +6,7 @@ dotenv.config();
 
 const runSeed = async () => {
   try {
-    const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kumbhstay';
+    const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/CareNest';
     await mongoose.connect(mongoUri);
     console.log('[Nashik Seeder] Connected to MongoDB...');
     await seedDatabase();

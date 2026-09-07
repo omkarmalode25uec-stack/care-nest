@@ -422,7 +422,7 @@ export const seedDatabase = async () => {
     let adminUser = await User.findOne({ email: 'admin@kumbhstay.com' });
     if (!adminUser) {
       adminUser = await User.create({
-        name: 'KumbhStay Chief Verification Officer (Nashik)',
+        name: 'Care Nest Chief Verification Officer (Nashik)',
         email: 'admin@kumbhstay.com',
         phone: '+91 1800 200 2026',
         password: 'Admin@123456',
@@ -430,6 +430,18 @@ export const seedDatabase = async () => {
         isVerified: true,
       });
       console.log('[Seeder] Default admin user created: admin@kumbhstay.com / Admin@123456');
+    }
+
+    let careNestAdmin = await User.findOne({ email: 'admin@carenest.org' });
+    if (!careNestAdmin) {
+      careNestAdmin = await User.create({
+        name: 'Care Nest Chief Verification Officer (Nashik)',
+        email: 'admin@carenest.org',
+        phone: '+91 1800 200 2026',
+        password: 'Admin@123456',
+        role: 'admin',
+        isVerified: true,
+      });
     }
 
     let nashikAdmin = await User.findOne({ email: 'admin@kumbhstaynashik.local' });
@@ -450,6 +462,18 @@ export const seedDatabase = async () => {
       demoAdmin = await User.create({
         name: 'Demo Quality Auditor',
         email: 'admin.demo@kumbhstay.com',
+        phone: '+91 98000 11000',
+        password: 'Admin@123',
+        role: 'admin',
+        isVerified: true,
+      });
+    }
+
+    let careNestDemoAdmin = await User.findOne({ email: 'admin.demo@carenest.com' });
+    if (!careNestDemoAdmin) {
+      careNestDemoAdmin = await User.create({
+        name: 'Care Nest Demo Quality Auditor',
+        email: 'admin.demo@carenest.com',
         phone: '+91 98000 11000',
         password: 'Admin@123',
         role: 'admin',
@@ -482,11 +506,35 @@ export const seedDatabase = async () => {
       });
     }
 
+    let careNestDemoOwner = await User.findOne({ email: 'owner.demo@carenest.com' });
+    if (!careNestDemoOwner) {
+      careNestDemoOwner = await User.create({
+        name: 'Care Nest Demo Stay Owner',
+        email: 'owner.demo@carenest.com',
+        phone: '+91 98765 43210',
+        password: 'Owner@123',
+        role: 'owner',
+        isVerified: true,
+      });
+    }
+
     let demoPilgrim = await User.findOne({ email: 'pilgrim.demo@kumbhstay.com' });
     if (!demoPilgrim) {
       demoPilgrim = await User.create({
         name: 'Demo Pilgrim Yatri',
         email: 'pilgrim.demo@kumbhstay.com',
+        phone: '+91 98765 00000',
+        password: 'Pilgrim@123',
+        role: 'pilgrim',
+        isVerified: true,
+      });
+    }
+
+    let careNestDemoPilgrim = await User.findOne({ email: 'pilgrim.demo@carenest.com' });
+    if (!careNestDemoPilgrim) {
+      careNestDemoPilgrim = await User.create({
+        name: 'Care Nest Demo Pilgrim Yatri',
+        email: 'pilgrim.demo@carenest.com',
         phone: '+91 98765 00000',
         password: 'Pilgrim@123',
         role: 'pilgrim',
@@ -545,7 +593,7 @@ export const seedDatabase = async () => {
             docType: 'ownership_proof',
             title: 'Municipal Registry Deed',
             fileName: 'nashik_deed_plot18.pdf',
-            fileUrl: 'https://kumbhstay.org/docs/demo_deed.pdf',
+            fileUrl: 'https://carenest.org/docs/demo_deed.pdf',
             status: 'pending',
           },
         ],

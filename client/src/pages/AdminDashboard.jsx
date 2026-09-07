@@ -160,7 +160,7 @@ export const AdminDashboard = () => {
                 </span>
               </div>
               <p className="text-sm text-slate-500 mt-1">
-                KumbhStay verification engine • Strict Nashik platform scope verification
+                Care Nest verification engine • Strict Nashik platform scope verification
               </p>
             </div>
           </div>
@@ -503,7 +503,7 @@ export const AdminDashboard = () => {
                   <div>
                     <h2 className="text-base font-bold text-slate-900">
                       {activeTab === 'pending' && 'Pending Property Verification Queue'}
-                      {activeTab === 'verified' && 'Verified KumbhStay Listings (Live)'}
+                      {activeTab === 'verified' && 'Verified Care Nest Listings (Live)'}
                       {activeTab === 'changes_requested' && 'Properties Awaiting Host Corrections'}
                       {activeTab === 'rejected' && 'Rejected & Suspended Accommodations'}
                       {activeTab === 'all' && 'All Nashik Accommodation Inventory'}

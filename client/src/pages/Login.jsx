@@ -45,7 +45,7 @@ export const Login = () => {
             <Flame className="w-7 h-7 text-amber-200 fill-amber-200" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Welcome Back to KumbhStay
+            Welcome Back to Care Nest
           </h2>
           <p className="mt-2 text-sm text-slate-600">
             Sign in to access your verified bookings, property listings, and saved stays.
@@ -142,7 +142,7 @@ export const Login = () => {
             <button
               type="button"
               onClick={() => {
-                setEmail('pilgrim.demo@kumbhstay.com');
+                setEmail('pilgrim.demo@carenest.com');
                 setPassword('Pilgrim@123');
               }}
               className="py-2 px-2 bg-white hover:bg-amber-100/60 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl transition text-center shadow-xs"
@@ -152,7 +152,7 @@ export const Login = () => {
             <button
               type="button"
               onClick={() => {
-                setEmail('owner.demo@kumbhstay.com');
+                setEmail('owner.demo@carenest.com');
                 setPassword('Owner@123');
               }}
               className="py-2 px-2 bg-white hover:bg-amber-100/60 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl transition text-center shadow-xs"
@@ -162,7 +162,7 @@ export const Login = () => {
             <button
               type="button"
               onClick={() => {
-                setEmail('admin.demo@kumbhstay.com');
+                setEmail('admin.demo@carenest.com');
                 setPassword('Admin@123');
               }}
               className="py-2 px-2 bg-white hover:bg-amber-100/60 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl transition text-center shadow-xs"

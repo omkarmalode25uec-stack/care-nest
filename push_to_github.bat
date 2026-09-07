@@ -1,7 +1,7 @@
 @echo off
-title Push KumbhStay to GitHub
+title Push Care Nest to GitHub
 echo ===================================================
-echo   Pushing KumbhStay to GitHub: care-nest
+echo   Pushing Care Nest to GitHub: care-nest
 echo   Repository: https://github.com/omkarmalode25uec-stack/care-nest
 echo ===================================================
 echo.

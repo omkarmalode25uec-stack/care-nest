@@ -1,7 +1,7 @@
 import api from './api';
 
 /**
- * Payment Service for KumbhStay (Razorpay Test Mode Integration)
+ * Payment Service for Care Nest (Razorpay Test Mode Integration)
  */
 
 export const paymentService = {

@@ -13,7 +13,7 @@ export const Footer = () => {
               <div className="w-9 h-9 rounded-xl bg-orange-600 flex items-center justify-center text-white">
                 <Flame className="w-5 h-5 text-amber-200 fill-amber-200" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">Kumbh<span className="text-orange-500">Stay</span></span>
+              <span className="text-xl font-bold text-white tracking-tight">Care <span className="text-orange-500">Nest</span></span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Dedicated to providing verified, trustworthy accommodation and pilgrim assistance for Kumbh Mela. Transparent pricing, verified locations, and real pilgrim reviews.
@@ -95,7 +95,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} KumbhStay. All rights reserved. In service of Kumbh Mela Pilgrims.</p>
+          <p>© {new Date().getFullYear()} Care Nest. All rights reserved. In service of Kumbh Mela Pilgrims.</p>
           <div className="flex items-center gap-1 text-slate-400">
             <span>Built with care & devotion</span>
             <Heart className="w-3.5 h-3.5 text-orange-500 fill-orange-500" />

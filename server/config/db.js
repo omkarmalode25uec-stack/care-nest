@@ -19,7 +19,7 @@ const connectDB = async () => {
     throw new Error('MONGODB_URI environment variable is missing in production configuration.');
   }
 
-  const connectionUri = uri || 'mongodb://127.0.0.1:27017/kumbhstay';
+  const connectionUri = uri || 'mongodb://127.0.0.1:27017/CareNest';
 
   try {
     const conn = await mongoose.connect(connectionUri, {
@@ -39,13 +39,13 @@ const connectDB = async () => {
         if (!memoryServer) {
           memoryServer = await MongoMemoryServer.create({
             instance: {
-              dbName: 'kumbhstay',
+              dbName: 'CareNest',
             },
           });
         }
         const memUri = memoryServer.getUri();
         const conn = await mongoose.connect(memUri);
-        console.log(`[MongoDB Memory Server] Connected to in-memory instance: ${memUri} (Database: kumbhstay)`);
+        console.log(`[MongoDB Memory Server] Connected to in-memory instance: ${memUri} (Database: CareNest)`);
         return conn;
       } catch (memError) {
         console.error(`[MongoDB Error] Failed to initialize MongoMemoryServer: ${memError.message}`);

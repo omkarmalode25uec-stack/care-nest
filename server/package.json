@@ -1,7 +1,7 @@
 {
   "name": "kumbhstay-server",
   "version": "1.0.0",
-  "description": "KumbhStay Backend API - Accommodation & Pilgrim Assistance for Nashik Kumbh Mela",
+  "description": "Care Nest Backend API - Accommodation & Pilgrim Assistance for Nashik Kumbh Mela",
   "main": "server.js",
   "type": "module",
   "scripts": {

@@ -73,12 +73,12 @@ export const Navbar = () => {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-bold text-slate-900 tracking-tight">Kumbh<span className="text-orange-600">Stay</span></span>
+                <span className="text-xl font-bold text-slate-900 tracking-tight">Care <span className="text-orange-600">Nest</span></span>
                 <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-orange-100 text-orange-800 border border-orange-200">
                   <ShieldCheck className="w-3 h-3 mr-0.5 text-orange-600" /> Trust
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 font-medium leading-none">Pilgrim Stay Platform</p>
+              <p className="text-[10px] text-slate-500 font-medium leading-none">Trusted Pilgrim Stays</p>
             </div>
           </Link>
 

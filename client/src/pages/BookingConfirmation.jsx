@@ -84,7 +84,7 @@ export default function BookingConfirmation() {
 
   // Pre-filled WhatsApp message
   const waText = encodeURIComponent(
-    `Namaste! I have booked a stay on KumbhStay.\n\n` +
+    `Namaste! I have booked a stay on Care Nest.\n\n` +
     `📌 Property: ${property.title || 'Accommodation'}\n` +
     `🔖 Booking ID: #${booking._id}\n` +
     `💳 Payment: ${isPaid ? `PAID via Razorpay Test Mode (Ref: ${booking.razorpayPaymentId || 'Completed'})` : 'Payment Pending'}\n` +
@@ -118,7 +118,7 @@ export default function BookingConfirmation() {
           <p className="text-gray-600 max-w-lg mx-auto text-base">
             {isPaid
               ? 'Your test payment was cryptographically verified via Razorpay Test Mode. Your stay reservation is confirmed.'
-              : 'Your booking request has been securely recorded on KumbhStay. The property host has been notified.'}
+              : 'Your booking request has been securely recorded on Care Nest. The property host has been notified.'}
           </p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
@@ -194,7 +194,7 @@ export default function BookingConfirmation() {
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold text-gray-900">{property.title || 'Kumbh Stay Accommodation'}</h3>
+                <h3 className="text-lg font-bold text-gray-900">{property.title || 'Care Nest Accommodation'}</h3>
                 {property.verification?.isKumbhVerified && (
                   <span className="inline-flex items-center gap-1 text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
                     <ShieldCheck className="w-3 h-3" /> Verified

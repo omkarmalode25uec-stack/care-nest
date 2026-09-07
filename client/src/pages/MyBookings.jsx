@@ -162,7 +162,7 @@ export default function MyBookings() {
               const hostPhone = prop.contactPhone || prop.owner?.phone || '919876543210';
               const cleanHostPhone = hostPhone.replace(/[^0-9]/g, '');
               const waText = encodeURIComponent(
-                `Namaste! Regarding my KumbhStay booking #${b._id} for ${prop.title || 'Stay'}:\nDates: ${checkIn} to ${checkOut}.\nPlease assist with check-in instructions.`
+                `Namaste! Regarding my Care Nest booking #${b._id} for ${prop.title || 'Stay'}:\nDates: ${checkIn} to ${checkOut}.\nPlease assist with check-in instructions.`
               );
               const waUrl = `https://wa.me/${cleanHostPhone.startsWith('91') ? cleanHostPhone : '91' + cleanHostPhone}?text=${waText}`;
 

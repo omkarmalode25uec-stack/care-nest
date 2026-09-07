@@ -37,7 +37,7 @@ export const KumbhAIAssistant = () => {
     {
       id: 'msg-init-1',
       sender: 'assistant',
-      text: "Namaste! 🙏 I am your **KumbhStay Nashik Assistant**. I can help you find verified stays in Nashik & Trimbakeshwar, explain booking & trust audits, or guide you around the Godavari Snan Ghats.",
+      text: "Namaste! 🙏 I am **KumbhVaani — Care Nest's multilingual pilgrim assistant**. I can help you find verified stays in Nashik & Trimbakeshwar, explain booking & trust audits, or guide you around the Godavari Snan Ghats.",
       properties: [],
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
@@ -132,12 +132,12 @@ export const KumbhAIAssistant = () => {
           <button
             onClick={() => setIsOpen(true)}
             className="group flex items-center gap-2.5 px-4 py-3.5 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm rounded-full shadow-2xl shadow-orange-950/30 hover:shadow-orange-950/40 transition-all transform hover:-translate-y-0.5 active:scale-95 border border-amber-300/40 cursor-pointer"
-            aria-label="Open KumbhStay AI Assistant"
+            aria-label="Open KumbhVaani — Care Nest AI Assistant"
           >
             <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
               <Sparkles className="w-3.5 h-3.5 text-amber-200 group-hover:rotate-12 transition-transform" />
             </div>
-            <span>KumbhStay Assistant</span>
+            <span>KumbhVaani</span>
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           </button>
         )}
@@ -155,15 +155,15 @@ export const KumbhAIAssistant = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="font-extrabold text-sm text-white leading-tight">
-                    KumbhStay Assistant
+                    KumbhVaani
                   </h3>
                   <span className="text-[10px] font-bold bg-amber-400 text-amber-950 px-1.5 py-0.2 rounded-full uppercase">
-                    Nashik
+                    Care Nest
                   </span>
                 </div>
                 <p className="text-[11px] text-orange-100/90 flex items-center gap-1 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                  <span>Online • Verified Stays & Pilgrim Guide</span>
+                  <span>Online • Multilingual Pilgrim Assistant</span>
                 </p>
               </div>
             </div>

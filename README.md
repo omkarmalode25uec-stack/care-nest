@@ -1,4 +1,4 @@
-# KumbhStay 🕉️ — Nashik Kumbh Mela Accommodation Platform
+# Care Nest 🕉️ — Trusted Stays for Every Pilgrim
 
 > **A Nashik-focused accommodation discovery, verification, and booking platform for Kumbh Mela pilgrims, yatris, and families.**
 
@@ -6,15 +6,15 @@
 
 ## 🏛️ Project Overview
 
-**KumbhStay** connects pilgrims attending the Kumbh Mela in **Nashik, Maharashtra, India** with verified accommodations including Homestays, Ashrams, Dharamshalas, Hotels, Hostels, and Tents across key pilgrimage sectors (Panchavati, Ramkund, Godavari Ghats, Tapovan, and Trimbakeshwar).
+**Care Nest** connects pilgrims attending the Kumbh Mela in **Nashik, Maharashtra, India** with verified accommodations including Homestays, Ashrams, Dharamshalas, Hotels, Hostels, and Tents across key pilgrimage sectors (Panchavati, Ramkund, Godavari Ghats, Tapovan, and Trimbakeshwar).
 
 ### Core Features & USPs
 1. **Strict Nashik Platform Scope:** All accommodations, landmark distances, maps, and guides are localized exclusively to Nashik & Trimbakeshwar (`locationScope: "nashik"`).
-2. **6-Point Manual Trust & Verification System:** Admin-curated 6-point matrix (Owner Identity, Municipal/Title NOC, Ghat Proximity, Photo Authenticity, Tariff Transparency, Snan Amenities) issuing Kumbh Verified Trust Badges and deterministic trust scores.
+2. **6-Point Manual Trust & Verification System:** Admin-curated 6-point matrix (Owner Identity, Municipal/Title NOC, Ghat Proximity, Photo Authenticity, Tariff Transparency, Snan Amenities) issuing Care Nest Verified Badges and deterministic trust scores.
 3. **Interactive OpenStreetMap + Leaflet.js:** Fast, open-source geospatial map rendering with zero proprietary map API fees or restrictions.
 4. **Comprehensive Stay Search & Filters:** Real-time search with sector destination dropdowns, auto-synchronizing check-in/check-out dates (+1 day minimum), Gender Suitability (`Female`, `Male`, `All`), and Stay Type / Occupancy (`Family`, `Single`, `All`).
 5. **Razorpay TEST Mode Payment Flow:** Complete booking request cycle with server-side order creation, test checkout modal, and cryptographic HMAC-SHA256 signature verification.
-6. **Kumbh AI Assistant:** Lightweight floating AI guide providing practical pilgrim assistance for stay guidance, Snan timings, ghat locations, and navigation tips.
+6. **KumbhVaani AI Assistant:** Multilingual pilgrim assistant (**KumbhVaani — Care Nest's multilingual pilgrim assistant**) providing practical stay guidance, Snan timings, ghat locations, and navigation tips.
 7. **Role-Based Access Control:** Strict JWT authentication with segregated role permissions for `pilgrim`, `owner`, and `admin`.
 
 ---
@@ -136,7 +136,7 @@ npm run dev
   1. Host registers and submits property details + proof documents (Status: `pending`).
   2. Admin evaluates submission against the 6-point checklist.
   3. Actions available:
-     - **Approve:** Computes trust score, awards Kumbh Verified Badge, publishes live to search.
+     - **Approve:** Computes trust score, awards Care Nest Verified Badge, publishes live to search.
      - **Request Changes:** Sends listing back to host with feedback notes for revision and resubmission.
      - **Reject / Suspend:** Rejects unverified listings or suspends problematic properties.
 

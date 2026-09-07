@@ -43,7 +43,7 @@ export const createReport = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: 'Report submitted successfully. Our KumbhStay Trust & Safety team will inspect this listing immediately.',
+      message: 'Report submitted successfully. Our Care Nest Trust & Safety team will inspect this listing immediately.',
       data: report,
     });
   } catch (error) {

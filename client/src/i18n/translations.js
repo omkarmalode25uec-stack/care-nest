@@ -1,8 +1,8 @@
 export const translations = {
   en: {
     // Brand & Taglines
-    brand_name: "KumbhStay",
-    brand_tagline: "Pilgrim Stay Platform",
+    brand_name: "Care Nest",
+    brand_tagline: "Trusted Stays for Every Pilgrim",
     sacred_banner: "Kumbh Mela 2027 Verified Accommodations & Pilgrim Assistance",
     trust_badge: "Trust",
 
@@ -102,7 +102,7 @@ export const translations = {
     booking_confirmed: "Booking Request Placed!",
     whatsapp_contact: "Contact Host on WhatsApp",
     open_maps: "Open in Google Maps",
-    ai_assistant_title: "Kumbh AI Stay Guide",
+    ai_assistant_title: "KumbhVaani AI Stay Guide",
     ai_assistant_placeholder: "Ask e.g. 'Family room under ₹1500 near Ramkund with hot water'...",
     ai_assistant_ask: "Ask AI Assistant",
     recommended_for_you: "Recommended For You",
@@ -110,8 +110,8 @@ export const translations = {
 
   hi: {
     // Brand & Taglines
-    brand_name: "कुंभस्टे (KumbhStay)",
-    brand_tagline: "विश्वसनीय तीर्थयात्री आवास मंच",
+    brand_name: "केयर नेस्ट (Care Nest)",
+    brand_tagline: "प्रत्येक तीर्थयात्री के लिए विश्वसनीय आवास",
     sacred_banner: "कुंभ मेला 2027 सत्यापित आवास एवं तीर्थयात्री सहायता",
     trust_badge: "सत्यापित",
 
@@ -211,16 +211,16 @@ export const translations = {
     booking_confirmed: "बुकिंग अनुरोध सफलतापूर्वक दर्ज!",
     whatsapp_contact: "WhatsApp पर मालिक से संपर्क करें",
     open_maps: "गूगल मैप्स में दिशा देखें",
-    ai_assistant_title: "कुंभ AI सहायक",
-    ai_assistant_placeholder: "पूछें: 'संगम के पास 1500 के अंदर गर्म पानी वाला पारिवारिक कमरा'...",
+    ai_assistant_title: "कुंभवाणी AI सहायक",
+    ai_assistant_placeholder: "पूछें: 'रामकुंड के पास 1500 के अंदर गर्म पानी वाला पारिवारिक कमरा'...",
     ai_assistant_ask: "AI से पूछें",
     recommended_for_you: "आपके लिए अनुशंसित आवास",
   },
 
   mr: {
     // Brand & Taglines
-    brand_name: "कुंभस्टे (KumbhStay)",
-    brand_tagline: "विश्वासार्ह यात्रेकरू निवास व्यासपीठ",
+    brand_name: "केअर नेस्ट (Care Nest)",
+    brand_tagline: "प्रत्येक यात्रेकरूसाठी विश्वासार्ह निवास",
     sacred_banner: "कुंभमेळा 2027 सत्यापित निवास आणि यात्रेकरू सहाय्य",
     trust_badge: "सत्यापित",
 
@@ -320,8 +320,8 @@ export const translations = {
     booking_confirmed: "बुकिंग विनंती यशस्वीरित्या नोंदवली गेली!",
     whatsapp_contact: "WhatsApp वर मालकाशी संपर्क साधा",
     open_maps: "गुगल मॅप्सवर दिशा पहा",
-    ai_assistant_title: "कुंभ AI सहाय्यक",
-    ai_assistant_placeholder: "विचारा: 'संगमजवळ 1500 रुपयांपर्यंत गरम पाण्याचे कौटुंबिक निवास'...",
+    ai_assistant_title: "कुंभवाणी AI सहाय्यक",
+    ai_assistant_placeholder: "विचारा: 'रामकुंडजवळ 1500 रुपयांपर्यंत गरम पाण्याचे कौटुंबिक निवास'...",
     ai_assistant_ask: "AI कडून शोधा",
     recommended_for_you: "तुमच्यासाठी शिफारस केलेले निवास",
   },

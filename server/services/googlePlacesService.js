@@ -30,7 +30,7 @@ class GooglePlacesService {
       return {
         isConfigured: false,
         source: 'prototype_demo',
-        disclaimer: 'Google Places API key not configured. Displaying simulated reviews for KumbhStay prototype demonstration.',
+        disclaimer: 'Google Places API key not configured. Displaying simulated reviews for Care Nest prototype demonstration.',
         googlePlaceId: placeId || null,
         rating: fallbackRating,
         reviewCount: fallbackCount,

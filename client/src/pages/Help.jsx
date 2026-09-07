@@ -17,16 +17,16 @@ export const Help = () => {
 
   const faqs = [
     {
-      q: 'What does "KumbhStay Verified" mean?',
+      q: 'What does "Care Nest Verified" mean?',
       a: 'It means our ground team has physically inspected the property, confirmed authentic ownership, verified exact GPS walking distance to Snan Ghats, and ensured the published tariffs are binding without surge pricing.',
     },
     {
       q: 'How do I reach my stay during peak Snan traffic restrictions?',
-      a: 'During primary Shahi Snan dates, local police enforce vehicle restrictions in core mela sectors. Every KumbhStay listing includes specific sector gate numbers, pontoon bridge paths, and authorized electric shuttle drop points.',
+      a: 'During primary Shahi Snan dates, local police enforce vehicle restrictions in core mela sectors. Every Care Nest listing includes specific sector gate numbers, pontoon bridge paths, and authorized electric shuttle drop points.',
     },
     {
       q: 'What if a host demands higher cash payments upon check-in?',
-      a: 'This is strictly prohibited under our Fair Tariff Charter. Contact our 24/7 Pilgrim Grievance cell immediately at +91 1800-KUMBH-STAY with your booking ID, and our on-ground nodal coordinator will resolve it within 30 minutes.',
+      a: 'This is strictly prohibited under our Fair Tariff Charter. Contact our 24/7 Pilgrim Grievance cell immediately at +91 1800-CARE-NEST with your booking ID, and our on-ground nodal coordinator will resolve it within 30 minutes.',
     },
     {
       q: 'Are sattvic vegetarian meals and 24/7 hot water available?',
@@ -39,7 +39,7 @@ export const Help = () => {
   ];
 
   const emergencyContacts = [
-    { name: 'KumbhStay 24x7 Pilgrim Helpline', number: '+91 1800 200 2027', type: 'Support & Grievances' },
+    { name: 'Care Nest 24x7 Pilgrim Helpline', number: '+91 1800 200 2027', type: 'Support & Grievances' },
     { name: 'Mela Central Police Control Room', number: '112 / 100', type: 'Police & Security' },
     { name: 'Emergency Medical & Ambulance Service', number: '108', type: 'Healthcare' },
     { name: 'Lost & Found Pilgrim Center (Ramkund / Panchavati)', number: '+91 0253 250011', type: 'Assistance' },

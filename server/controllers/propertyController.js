@@ -611,7 +611,7 @@ export const submitPropertyForVerification = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: 'Property successfully submitted for KumbhStay on-ground verification in Nashik.',
+      message: 'Property successfully submitted for Care Nest on-ground verification in Nashik.',
       property,
     });
   } catch (error) {
@@ -657,7 +657,7 @@ export const getRecommendedProperties = async (req, res, next) => {
 
     const recommended = properties.map((p) => {
       const obj = p.toObject();
-      let recommendationReason = 'Verified Nashik Kumbh Stay';
+      let recommendationReason = 'Verified Care Nest Stay';
       if (obj.trustScore >= 95) {
         recommendationReason = 'Highest Trust & Physical Audit Score';
       } else if (obj.pricingBreakdown?.totalEstimatedPrice <= 1200) {

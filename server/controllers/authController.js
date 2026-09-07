@@ -73,8 +73,19 @@ export const loginUser = async (req, res, next) => {
       });
     }
 
-    // Check for user and include password for comparison
-    const user = await User.findOne({ email: email.toLowerCase().trim() }).select('+password');
+    // Check for user and include password for comparison (with dual Care Nest / KumbhStay domain alias fallback)
+    const normalizedEmail = email.toLowerCase().trim();
+    let user = await User.findOne({ email: normalizedEmail }).select('+password');
+
+    if (!user) {
+      if (normalizedEmail.endsWith('@carenest.com')) {
+        const altEmail = normalizedEmail.replace('@carenest.com', '@kumbhstay.com');
+        user = await User.findOne({ email: altEmail }).select('+password');
+      } else if (normalizedEmail.endsWith('@kumbhstay.com')) {
+        const altEmail = normalizedEmail.replace('@kumbhstay.com', '@carenest.com');
+        user = await User.findOne({ email: altEmail }).select('+password');
+      }
+    }
 
     if (!user) {
       return res.status(401).json({

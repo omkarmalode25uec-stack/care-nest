@@ -1,7 +1,7 @@
 {
   "name": "kumbhstay-workspace",
   "version": "1.0.0",
-  "description": "KumbhStay - Trustworthy Accommodation and Pilgrim Assistance for Kumbh Mela",
+  "description": "Care Nest - Trusted Stays for Every Pilgrim | Accommodation & Pilgrim Assistance for Nashik Kumbh Mela",
   "private": true,
   "scripts": {
     "build": "cd client && npm run build",
@@ -14,14 +14,15 @@
     "install:all": "cd server && npm install && cd ../client && npm install"
   },
   "keywords": [
-    "kumbhstay",
-    "mern",
+    "care-nest",
     "kumbh-mela",
+    "mern",
+    "nashik",
     "react",
     "express",
     "mongodb",
     "node"
   ],
-  "author": "KumbhStay Engineering",
+  "author": "Care Nest Engineering",
   "license": "ISC"
 }

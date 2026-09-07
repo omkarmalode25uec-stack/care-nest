@@ -169,7 +169,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 2. Why KumbhStay? Section */}
+      {/* 2. Why Care Nest? Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 text-orange-800 mb-3">
@@ -177,7 +177,7 @@ export const Home = () => {
             Why Choose Us
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Why Pilgrims Rely on KumbhStay
+            Why Pilgrims Rely on Care Nest
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
             Finding honest lodging in peak festival crowds shouldn't be stressful. Here is how we protect every pilgrim's sacred journey.
@@ -261,7 +261,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 4. How KumbhStay Builds Trust (4 Steps) */}
+      {/* 4. How Care Nest Builds Trust (4 Steps) */}
       <section className="bg-slate-900 text-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -270,10 +270,10 @@ export const Home = () => {
               Our 4-Layer Verification
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              How KumbhStay Builds Trust
+              How Care Nest Builds Trust
             </h2>
             <p className="mt-3 text-slate-400 text-sm sm:text-base">
-              Every single listing passes through our multi-point verification protocol before receiving the KumbhStay Trust Badge.
+              Every single listing passes through our multi-point verification protocol before receiving the Care Nest Trust Badge.
             </p>
           </div>
 
@@ -316,7 +316,7 @@ export const Home = () => {
               Are you a Stay Owner or Ashram Administrator?
             </h3>
             <p className="mt-2 text-white/90 text-sm max-w-xl mx-auto">
-              Join the official KumbhStay trust network. Undergo free physical verification and welcome verified pilgrims with honest tariffs.
+              Join the official Care Nest trust network. Undergo free physical verification and welcome verified pilgrims with honest tariffs.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link

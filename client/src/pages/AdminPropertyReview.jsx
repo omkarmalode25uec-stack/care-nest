@@ -119,7 +119,7 @@ export const AdminPropertyReview = () => {
         ...checklist,
         adminNotes,
       });
-      alert('Listing successfully verified and published to KumbhStay search!');
+      alert('Listing successfully verified and published to Care Nest search!');
       navigate('/admin/dashboard');
     } catch (err) {
       alert(err.response?.data?.message || 'Failed to verify property');
@@ -435,7 +435,7 @@ export const AdminPropertyReview = () => {
                   <span className="text-slate-500 block">Email Address</span>
                   <p className="font-medium text-slate-800 flex items-center gap-1.5">
                     <Mail className="w-3.5 h-3.5 text-slate-400" />
-                    {property.owner?.email || 'owner@kumbhstay.com'}
+                    {property.owner?.email || 'owner@carenest.com'}
                   </p>
                 </div>
 
@@ -472,7 +472,7 @@ export const AdminPropertyReview = () => {
                   </div>
                   <p className="text-xs text-slate-300 font-medium mt-0.5">
                     {liveTrustScore >= 85
-                      ? '🌟 Kumbh Platinum Trust Grade'
+                      ? '🌟 Care Nest Platinum Trust Grade'
                       : liveTrustScore >= 70
                       ? '🛡️ Verified Standard Grade'
                       : '⚠️ Insufficient for Verified Badge'}

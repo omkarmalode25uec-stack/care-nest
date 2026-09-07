@@ -47,7 +47,7 @@ class RazorpayService {
           currency: 'INR',
           receipt: receipt || `rcpt_${Date.now()}`,
           notes: {
-            platform: 'KumbhStay',
+            platform: 'Care Nest',
             mode: 'test',
             ...notes,
           },

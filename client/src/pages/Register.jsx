@@ -77,7 +77,7 @@ export const Register = () => {
             <Flame className="w-7 h-7 text-amber-200 fill-amber-200" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Create Your KumbhStay Account
+            Create Your Care Nest Account
           </h2>
           <p className="mt-2 text-sm text-slate-600">
             Join the verified pilgrimage network for safe accommodation and transparent booking.
@@ -257,7 +257,7 @@ export const Register = () => {
 
         {/* Privacy Note */}
         <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-500">
-          By registering, you agree to the KumbhStay Fair Tariff & Verification Guidelines. Passwords are securely hashed with bcrypt.
+          By registering, you agree to the Care Nest Fair Tariff & Verification Guidelines. Passwords are securely hashed with bcrypt.
         </div>
       </div>
     </div>

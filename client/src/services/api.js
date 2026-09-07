@@ -1,5 +1,5 @@
 /**
- * Clean reusable API service for KumbhStay
+ * Clean reusable API service for Care Nest
  */
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
@@ -15,7 +15,7 @@ class ApiService {
       ...customHeaders,
     };
 
-    const token = localStorage.getItem('kumbhstay_token');
+    const token = localStorage.getItem('carenest_token') || localStorage.getItem('kumbhstay_token');
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }

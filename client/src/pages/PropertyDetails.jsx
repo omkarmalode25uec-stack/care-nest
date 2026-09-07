@@ -195,7 +195,7 @@ export const PropertyDetails = () => {
           key: orderRes.order.keyId || 'rzp_test_kumbhstaydemo',
           amount: orderRes.order.amount,
           currency: orderRes.order.currency || 'INR',
-          name: 'KumbhStay Pilgrim Stays',
+          name: 'Care Nest Pilgrim Stays',
           description: `Booking reservation for ${property.title}`,
           order_id: orderRes.order.id,
           prefill: {

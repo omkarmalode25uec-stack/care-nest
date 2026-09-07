@@ -34,7 +34,7 @@ export const PropertyMap = ({
   latitude,
   longitude,
   location,
-  title = 'KumbhStay Accommodation',
+  title = 'Care Nest Accommodation',
   address = 'Nashik, Maharashtra',
   pricePerNight,
   googleMapsUrl,
@@ -124,7 +124,7 @@ export const PropertyMap = ({
               <Popup className="custom-leaflet-popup">
                 <div className="p-1 space-y-1.5 min-w-[180px]">
                   <span className="px-2 py-0.5 rounded-md bg-orange-100 text-orange-800 text-[10px] font-bold">
-                    KumbhStay Verified
+                    Care Nest Verified
                   </span>
                   <h4 className="text-xs font-bold text-slate-900 leading-tight">{title}</h4>
                   <p className="text-[11px] text-slate-600 line-clamp-1">{address}</p>

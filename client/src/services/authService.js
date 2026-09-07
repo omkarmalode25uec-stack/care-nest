@@ -5,6 +5,8 @@ export const authService = {
   async register(userData) {
     const data = await api.post('/auth/register', userData);
     if (data.token) {
+      localStorage.setItem('carenest_token', data.token);
+      localStorage.setItem('carenest_user', JSON.stringify(data.user));
       localStorage.setItem('kumbhstay_token', data.token);
       localStorage.setItem('kumbhstay_user', JSON.stringify(data.user));
     }
@@ -15,6 +17,8 @@ export const authService = {
   async login(credentials) {
     const data = await api.post('/auth/login', credentials);
     if (data.token) {
+      localStorage.setItem('carenest_token', data.token);
+      localStorage.setItem('carenest_user', JSON.stringify(data.user));
       localStorage.setItem('kumbhstay_token', data.token);
       localStorage.setItem('kumbhstay_user', JSON.stringify(data.user));
     }
@@ -33,6 +37,8 @@ export const authService = {
 
   // Logout
   logout() {
+    localStorage.removeItem('carenest_token');
+    localStorage.removeItem('carenest_user');
     localStorage.removeItem('kumbhstay_token');
     localStorage.removeItem('kumbhstay_user');
   },
@@ -40,7 +46,7 @@ export const authService = {
   // Get stored user info from local storage
   getStoredUser() {
     try {
-      const user = localStorage.getItem('kumbhstay_user');
+      const user = localStorage.getItem('carenest_user') || localStorage.getItem('kumbhstay_user');
       return user ? JSON.parse(user) : null;
     } catch (e) {
       return null;
@@ -49,7 +55,7 @@ export const authService = {
 
   // Get stored JWT token
   getToken() {
-    return localStorage.getItem('kumbhstay_token');
+    return localStorage.getItem('carenest_token') || localStorage.getItem('kumbhstay_token');
   },
 };
 

@@ -79,7 +79,7 @@ export const createPaymentOrder = async (req, res) => {
       receipt: `bkg_${booking._id.toString().slice(-8)}`,
       notes: {
         bookingId: booking._id.toString(),
-        propertyTitle: booking.property?.title || 'KumbhStay Accommodation',
+        propertyTitle: booking.property?.title || 'Care Nest Accommodation',
         guestName: booking.guestName,
         guestPhone: booking.guestPhone,
       },

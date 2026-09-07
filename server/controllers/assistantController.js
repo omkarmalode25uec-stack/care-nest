@@ -7,7 +7,7 @@ const KNOWLEDGE_BASE = {
   // Category A: Website Help & FAQs
   howToBook: {
     patterns: [/how (do|can) (i|we) book/i, /how (to|does) (request )?booking (work|happen)/i, /booking (process|steps|help)/i, /how booking works/i],
-    reply: `To book a stay on KumbhStay:
+    reply: `To book a stay on Care Nest:
 1. **Explore Stays**: Browse verified Nashik & Trimbakeshwar accommodations on the Find Stays page (List or Map view).
 2. **Select a Stay**: Click "View Details" on any property you like.
 3. **Request Booking**: Choose your check-in / check-out dates, number of pilgrims, and guest contact.
@@ -42,7 +42,7 @@ const KNOWLEDGE_BASE = {
   },
   paymentSafety: {
     patterns: [/payment safe/i, /payment methods?/i, /razorpay/i, /how (to|do i) pay/i, /is payment/i],
-    reply: `KumbhStay uses **Razorpay Test Mode** for secure, cryptographic payment verification. We do not store credit/debit card numbers or UPI PINs on our servers. Your booking status updates in real time upon signature verification.`,
+    reply: `Care Nest uses **Razorpay Test Mode** for secure, cryptographic payment verification. We do not store credit/debit card numbers or UPI PINs on our servers. Your booking status updates in real time upon signature verification.`,
   },
 
   // Category D: Pilgrimage & Cultural Information
@@ -70,7 +70,7 @@ const KNOWLEDGE_BASE = {
   },
   mapHelp: {
     patterns: [/how (to|can i) use the map/i, /map help/i, /openstreetmap/i, /how map works/i],
-    reply: `You can use the interactive **OpenStreetMap** on KumbhStay:
+    reply: `You can use the interactive **OpenStreetMap** on Care Nest:
 - On the **Find Stays** page, click the **"Map View"** toggle button to see all verified stay price pins across Nashik and Trimbakeshwar.
 - On any **Property Details** page, scroll to the interactive map to inspect exact GPS coordinates, nearby Snan Ghats (Ramkund, Kushavarta), 24/7 First-Aid medical posts, and shuttle stops.`,
   },
@@ -376,7 +376,7 @@ export const chatAssistant = async (req, res) => {
     if (prayagrajPatterns.some((pattern) => pattern.test(cleanMsg)) && !cleanMsg.match(/what is kumbh/i)) {
       return res.status(200).json({
         success: true,
-        reply: `Please note that **KumbhStay currently supports Nashik stays only** (Nashik & Trimbakeshwar, Maharashtra). We do not list or book accommodations in Prayagraj. You can search verified stays across Panchavati, Ramkund, Gangapur Road, and Trimbakeshwar!`,
+        reply: `Please note that **Care Nest currently supports Nashik stays only** (Nashik & Trimbakeshwar, Maharashtra). We do not list or book accommodations in Prayagraj. You can search verified stays across Panchavati, Ramkund, Gangapur Road, and Trimbakeshwar!`,
         properties: [],
         type: 'scope_notice',
       });
@@ -467,7 +467,7 @@ export const chatAssistant = async (req, res) => {
     // ----------------------------------------------------
     // 5. GENERAL / OPEN QUESTION FALLBACK
     // ----------------------------------------------------
-    const fallbackReply = `I am your **KumbhStay AI Assistant (Nashik)**. I can help you with:
+    const fallbackReply = `I am **KumbhVaani — Care Nest's multilingual pilgrim assistant (Nashik)**. I can help you with:
 - 🔍 **Finding Stays in Nashik**: e.g., *"Affordable family stay near Ramkund with hot water"*
 - 🏨 **Property Inquiries**: Ask about Wi-Fi, pricing, food, or distance to Kushavarta / Ramkund Ghat
 - 📋 **Website Help**: e.g., *"How do I book a stay?"* or *"What does Owner Verified mean?"*

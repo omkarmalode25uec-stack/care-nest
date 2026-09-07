@@ -43,7 +43,7 @@ export const HowItWorks = () => {
       step: '03',
       title: 'Location & Ghat Proximity Verification',
       subtitle: 'Accurate GeoJSON Coordinates & Pedestrian Paths',
-      description: 'Misleading distances are common during mass festivals. KumbhStay physically walks and records real pedestrian routes to Snan Ghats, Pontoon Bridges, and Shuttle Points.',
+      description: 'Misleading distances are common during mass festivals. Care Nest physically walks and records real pedestrian routes to Snan Ghats, Pontoon Bridges, and Shuttle Points.',
       icon: MapPin,
       checklist: [
         'Precise GeoJSON [longitude, latitude] coordinates',
@@ -55,7 +55,7 @@ export const HowItWorks = () => {
       step: '04',
       title: 'Transparent Pricing Guarantee',
       subtitle: 'Zero Last-Minute Price Gouging',
-      description: 'Listed hosts sign the KumbhStay Fair Tariff Charter. The price you book on KumbhStay is final, protecting yatris from unexpected cash demands on arrival.',
+      description: 'Listed hosts sign the Care Nest Fair Tariff Charter. The price you book on Care Nest is final, protecting yatris from unexpected cash demands on arrival.',
       icon: DollarSign,
       checklist: [
         'Zero surprise surcharge on peak Shahi Snan days',
@@ -71,10 +71,10 @@ export const HowItWorks = () => {
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 text-orange-800">
           <ShieldCheck className="w-4 h-4 text-orange-600" />
-          The KumbhStay Trust Standard
+          The Care Nest Trust Standard
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          How KumbhStay Protects Every Pilgrim
+          How Care Nest Protects Every Pilgrim
         </h1>
         <p className="text-base text-slate-600 leading-relaxed">
           Our 4-pillar verification protocol ensures transparent pricing, real photos, accurate Ghat proximity, and physical safety for all Kumbh Mela yatris.

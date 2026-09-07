@@ -5,12 +5,13 @@ export const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguageState] = useState(() => {
-    return localStorage.getItem('kumbhstay_lang') || 'en';
+    return localStorage.getItem('carenest_lang') || localStorage.getItem('kumbhstay_lang') || 'en';
   });
 
   const setLanguage = (lang) => {
     if (['en', 'hi', 'mr'].includes(lang)) {
       setLanguageState(lang);
+      localStorage.setItem('carenest_lang', lang);
       localStorage.setItem('kumbhstay_lang', lang);
     }
   };

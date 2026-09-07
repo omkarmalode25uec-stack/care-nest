@@ -69,13 +69,13 @@ export const TrustScoreCard = ({
             </div>
             <div>
               <span className="text-[11px] font-extrabold text-amber-400 uppercase tracking-widest block">
-                KumbhStay Trust Engine
+                Care Nest Trust Engine
               </span>
               <h3 className="text-xl font-bold text-white tracking-tight">Verified Trust Score</h3>
             </div>
           </div>
           <p className="text-xs text-slate-300">
-            Certified by KumbhStay on-ground verification team
+            Certified by Care Nest on-ground verification team
           </p>
         </div>
 
@@ -179,7 +179,7 @@ export const TrustScoreCard = ({
         <div className="relative z-10 p-4 rounded-2xl bg-slate-800/90 border border-slate-700 text-xs text-slate-300 space-y-2 animate-in fade-in duration-200">
           <p className="font-bold text-white flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>KumbhStay Trust Standard</span>
+            <span>Care Nest Trust Standard</span>
           </p>
           <p className="leading-relaxed">
             Every listing undergoes a 5-pillar inspection: host identity checks prevent ghost listings, municipal electricity/registry deeds confirm legal hosting authority, GPS coordinates verify exact walking paths to holy snan ghats, unedited photos prevent deceptive staging, and pricing audits guarantee zero predatory surge pricing during Shahi Snan days.
