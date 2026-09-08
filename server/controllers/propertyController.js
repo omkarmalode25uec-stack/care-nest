@@ -1,5 +1,5 @@
 import Property from '../models/Property.js';
-import { sampleProperties } from '../utils/seedData.js';
+import { sampleProperties, seedDatabase } from '../utils/seedData.js';
 import googlePlacesService from '../services/googlePlacesService.js';
 import locationService, { getNearestLandmarks, calculateDistanceKm, formatDistance } from '../services/locationService.js';
 
@@ -683,17 +683,17 @@ export const getRecommendedProperties = async (req, res, next) => {
   }
 };
 
-// @desc    Seed sample data manually
+// @desc    Seed sample data manually (Idempotent & Safe for Production)
 // @route   POST /api/properties/seed
 // @access  Public
 export const seedProperties = async (req, res, next) => {
   try {
-    await Property.deleteMany({});
-    const created = await Property.insertMany(sampleProperties);
-    res.status(201).json({
+    await seedDatabase();
+    const count = await Property.countDocuments({ locationScope: 'nashik', verificationStatus: 'verified' });
+    res.status(200).json({
       success: true,
-      message: `Successfully seeded ${created.length} sample Nashik properties.`,
-      count: created.length,
+      message: `Successfully verified and ensured authentic Nashik properties.`,
+      count,
     });
   } catch (error) {
     next(error);

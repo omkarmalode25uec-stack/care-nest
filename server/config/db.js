@@ -2,6 +2,12 @@ import mongoose from 'mongoose';
 
 let memoryServer = null;
 
+// Global cache for serverless environments (e.g. Vercel)
+let cached = global.mongoose;
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
 const connectDB = async () => {
   if (mongoose.connection.readyState === 1) {
     return mongoose.connection;
@@ -10,6 +16,9 @@ const connectDB = async () => {
     // Already connecting, wait until connected
     await new Promise((resolve) => mongoose.connection.once('connected', resolve));
     return mongoose.connection;
+  }
+  if (cached.conn) {
+    return cached.conn;
   }
 
   const isProduction = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
@@ -21,14 +30,22 @@ const connectDB = async () => {
 
   const connectionUri = uri || 'mongodb://127.0.0.1:27017/CareNest';
 
-  try {
-    const conn = await mongoose.connect(connectionUri, {
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(connectionUri, {
       serverSelectionTimeoutMS: 5000,
       bufferCommands: false,
+    }).then((conn) => {
+      console.log(`[MongoDB] Connected successfully to ${conn.connection.name}`);
+      return conn;
     });
-    console.log(`[MongoDB] Connected successfully to ${conn.connection.name}`);
-    return conn;
+  }
+
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
   } catch (error) {
+    cached.promise = null;
+    cached.conn = null;
     console.warn(`[MongoDB Notice] Connection attempt failed (${error.message}).`);
     
     // In development mode only, spin up MongoMemoryServer for instant plug-and-play functionality
